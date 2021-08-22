@@ -11,7 +11,7 @@
 	"rules": [
 		{
 			"scope": "string",
-			"foreground": "#ffffff",
+			"foreground": "#00ff00",
 		},
 		{
 			"scope": "variable",
@@ -28,6 +28,7 @@
 		{
 			"scope": "invalid",
 			"foreground": "#ff0000",
+			"font_style": "glow"
 		},
 		{
 			"scope": "comment",
