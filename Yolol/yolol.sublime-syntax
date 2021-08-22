@@ -18,6 +18,9 @@ contexts:
     - include: keywords
     - include: numbers
     - include: strings
+    - include: long
+    - include: variable
+    - include: arit
 
   keywords:
     # Keywords are if, else for and while.
