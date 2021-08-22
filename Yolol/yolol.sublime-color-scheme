@@ -1,0 +1,37 @@
+{
+	"variables": {
+		// Define variables here
+	},
+	"globals": {
+		"foreground": "",
+		"background": "",
+		"accent": "",
+		"selection": "",
+	},
+	"rules": [
+		{
+			"scope": "string",
+			"foreground": "#ffffff",
+		},
+		{
+			"scope": "variable",
+			"foreground": "#72e06c",
+		},
+		{
+			"scope": "keyword",
+			"foreground": "#f96600",
+		},
+		{
+			"scope": "constant",
+			"foreground": "#008ef9",
+		},
+		{
+			"scope": "invalid",
+			"foreground": "#ff0000",
+		},
+		{
+			"scope": "comment",
+			"foreground": "#7f7f7f",
+		},
+	]
+}

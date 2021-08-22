@@ -4,7 +4,7 @@
 name: Yolol
 file_extensions:
   - .yolol
-scope: source.example-c
+scope: source.yolol
 
 contexts:
   # The prototype context is prepended to all contexts but those setting
@@ -26,38 +26,49 @@ contexts:
     # need to be escaped: this is done by using two single quotes next to each
     # other.
     - match: '\b(if|else|for|while|then|end|goto)\b'
-      scope: keyword.control.example-c
+      scope: keyword.control.yolol
 
   numbers:
     - match: '\b(-)?[0-9.]+\b'
-      scope: constant.numeric.example-c
+      scope: constant.numeric.yolol
 
   strings:
     # Strings begin and end with quotes, and use backslashes as an escape
     # character.
     - match: '"'
-      scope: punctuation.definition.string.begin.example-c
+      scope: punctuation.definition.string.begin.yolol
       push: inside_string
 
   inside_string:
     - meta_include_prototype: false
-    - meta_scope: string.quoted.double.example-c
+    - meta_scope: string.quoted.double.yolol
     - match: '\.'
-      scope: constant.character.escape.example-c
+      scope: constant.character.escape.yolol
     - match: '"'
-      scope: punctuation.definition.string.end.example-c
+      scope: punctuation.definition.string.end.yolol
       pop: true
 
   comments:
     # Comments begin with a '//' and finish at the end of the line.
     - match: '//'
-      scope: punctuation.definition.comment.example-c
+      scope: punctuation.definition.comment.yolol
       push:
         # This is an anonymous context push for brevity.
-        - meta_scope: comment.line.double-slash.example-c
+        - meta_scope: comment.line.double-slash.yolol
         - match: $\n?
           pop: true
 
   long:
     # Yolol limits to lengths less than 70 chars, Including Comments
     - match: '^\w{71,}$'
+      scope: invalid.yolol
+
+  variable:
+    # Yolol Variables start with : and end with whitespace or arithmatic
+    #- match: '\b(-)?[a-z,A-Z.]+\b'
+      scope: variable.yolol
+
+  arit:
+    # Arithmatic and Logical Symbols
+    - match: '\b(<|<=|>|>=|!=|==|=|NOT|AND|OR|/+|-|/*|//|/+/+|--|/+=|-=|/*=|//=|%|%=|^|^=|ABS|!|SQRT|SIN|COS|TAN|ASIN|ACOS|ATAN)\b'
+      scope: keyword.operator.yolol
