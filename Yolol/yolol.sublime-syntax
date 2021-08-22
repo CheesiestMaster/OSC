@@ -42,8 +42,6 @@ contexts:
   inside_string:
     - meta_include_prototype: false
     - meta_scope: string.quoted.double.yolol
-    - match: '\.'
-      scope: constant.character.escape.yolol
     - match: '"'
       scope: punctuation.definition.string.end.yolol
       pop: true
@@ -60,15 +58,15 @@ contexts:
 
   long:
     # Yolol limits to lengths less than 70 chars, Including Comments
-    - match: '^\w{71,}$'
+    - match: '^\V{71,}$'
       scope: invalid.yolol
 
   variable:
-    # Yolol Variables start with : and end with whitespace or arithmatic
-    #- match: '\b(-)?[a-z,A-Z.]+\b'
+    # Yolol Variables start with : and are exclusively alphanumeric
+    - match: ':[a-z]+'
       scope: variable.yolol
 
   arit:
     # Arithmatic and Logical Symbols
-    - match: '\b(<|<=|>|>=|!=|==|=|NOT|AND|OR|/+|-|/*|//|/+/+|--|/+=|-=|/*=|//=|%|%=|^|^=|ABS|!|SQRT|SIN|COS|TAN|ASIN|ACOS|ATAN)\b'
+    - match: '\b(<|<=|>|>=|!=|==|=|NOT|AND|OR|\+|-|\*|\/|\+\+|--|\+=|-=|\*=|\/=|%|%=|^|^=|ABS|!|SQRT|SIN|COS|TAN|ASIN|ACOS|ATAN)\b'
       scope: keyword.operator.yolol
