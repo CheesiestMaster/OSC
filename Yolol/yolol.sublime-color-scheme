@@ -3,10 +3,10 @@
 		// Define variables here
 	},
 	"globals": {
-		"foreground": "",
-		"background": "",
-		"accent": "",
-		"selection": "",
+		"foreground": "hsl(219, 28%, 88%)",
+		"background": "hsl(210, 15%, 22%)",
+		"accent": "hsl(210, 60%, 60%)",
+		"selection": "hsla(210, 13%, 40%, 0.7)",
 	},
 	"rules": [
 		{
@@ -15,7 +15,7 @@
 		},
 		{
 			"scope": "variable",
-			"foreground": "#72e06c",
+			"foreground": "#0000ff",
 		},
 		{
 			"scope": "keyword",
@@ -28,7 +28,6 @@
 		{
 			"scope": "invalid",
 			"foreground": "#ff0000",
-			"font_style": "glow"
 		},
 		{
 			"scope": "comment",
